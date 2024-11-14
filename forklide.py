@@ -1,7 +1,10 @@
+#!/usr/bin/env python3
+
 import requests
 import argparse
 
-# Replace with ur GitHub token and username  , I haven't separate file for this coz it's simple script
+
+# Replace with your GitHub token and username
 GITHUB_TOKEN = "YOUR_GITHUB_TOKEN"
 USERNAME = "YOUR_GITHUB_USERNAME"
 GITHUB_API_URL = "https://api.github.com"
@@ -72,18 +75,17 @@ def main():
     )
     args = parser.parse_args()
 
+    # Fetch forked repositories
     repos = get_forked_repos()
 
     if not repos:
         print("No forked repositories found.")
         return
 
-    show_repos(repos)
-
-    # Delete 
     if args.remove:
+        # If remove option is used, delete selected repositories
         try:
-            print("Deleting Selected Repositories:\n")
+            print("\nDeleting Selected Repositories:\n")
             indices = [int(i.strip()) - 1 for i in args.remove.split(",")]
             deletion_count = 0
             for index in indices:
@@ -92,11 +94,24 @@ def main():
                         deletion_count += 1
                 else:
                     print(f"  ⚠️  Invalid index: {index + 1}")
+
             print(f"\nDeletion Completed: {deletion_count} repository(ies) deleted.\n")
+
+            repos = get_forked_repos()  # New list of forked repos
+            if repos:
+                print("Remaining Forked Repositories:\n")
+                show_repos(repos)
+            else:
+                print("All forked repositories have been deleted.")
+
         except ValueError:
             print(
                 "Invalid input for deletion. Please use comma-separated indices (e.g., -r 1,2,3)."
             )
+
+    else:
+        # No option = repo
+        show_repos(repos)
 
 
 if __name__ == "__main__":
