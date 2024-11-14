@@ -19,6 +19,47 @@
 
 ## Usage
 
-Clone the repository
+1. **Clone the Repository**
+  First,clone the Repo:
+```
+git clone https://github.com/noob6t5/forkL-D.git
+cd forkL-D
+```
+2. **Configure Your GitHub Credentials**:
+  
+ Open `forklide.py` in a text editor and add your GitHub username and personal access token (PAT).
+ 
+# Inside forklide.py
+```
+GITHUB_TOKEN = "YOUR_GITHUB_TOKEN"
+USERNAME = "YOUR_GITHUB_USERNAME"
+```
+Note: Replace YOUR_GITHUB_TOKEN with your actual token and YOUR_GITHUB_USERNAME with your GitHub username.
+
+3. **Run ForkL-D**:
+
+`python3 forklide.py`
+
+This command will display a numbered list of all your forked repositories.
+
+4. **Use it from Anywhere in Terminal** or use can make alises (Much faster)
+
+```
+chmod +x forklide.py
+sudo ln -sf $(pwd)/forklide.py /usr/local/bin/forklide
+```
+**Ensure it's running by hitting `forklide` in terminal**
+
+# Delete Specific Forked Repositories
+
+To delete specific repositories, use the -r option followed by the indices of the repositories you want to remove, `separated by commas`.
+
+`forklide -r 1,3,5`
+
+
+# After Deleting `2` which was dtale , sorry i forgot to show it first .. 
+
+![out](https://github.com/user-attachments/assets/bafbd509-86ec-41a6-88a6-c5b5736c9d23)
+
 
 
