@@ -1,12 +1,12 @@
 ## forkL-D
- **ForkL-D** is a simple Python script to list and delete forked repositories directly from your terminal. Customize it to your needs, or contribute via PRs to expand its functionality!
+ **ForkL-D** is a simple Python script to list and delete  repositories directly from your terminal. Customize it to your needs, or contribute via PRs to expand its functionality!
 
 # Insp
  I don't use other **GH** tool and Have ton's of forked repo Deleting them would be hassle . So, I created this By which u can guess   `Why I haven't improved this too much....`
 
 ## Features
 
-- List Forked Repositories: Quickly see all your forked repositories with a numbered list.
+- List All Repositories(Public,Forked,Private): Quickly see all your forked repositories with a numbered list.
 - Bulk Delete Forked Repositories: Specify indices to delete multiple repositories at once.
 - Clear, Minimal Output: After deletion, the updated list of remaining forked repositories is shown.
 
@@ -27,12 +27,12 @@ cd forkL-D
 ```
 2. **Configure Your GitHub Credentials**:
   
- Open `forklide.py` in a text editor and add your GitHub username and personal access token (PAT).
+ Open `config.txt` in a text editor and add your GitHub username and personal access token (PAT).
  
-# Inside forklide.py
+# Inside config.txt without "" in separate line
 ```
-GITHUB_TOKEN = "YOUR_GITHUB_TOKEN"
-USERNAME = "YOUR_GITHUB_USERNAME"
+"YOUR_GITHUB_TOKEN"
+"YOUR_GITHUB_USERNAME"
 ```
 Note: Replace YOUR_GITHUB_TOKEN with your actual token and YOUR_GITHUB_USERNAME with your GitHub username.
 
@@ -55,11 +55,6 @@ sudo ln -sf $(pwd)/forklide.py /usr/local/bin/forklide
 To delete specific repositories, use the -r option followed by the indices of the repositories you want to remove, `separated by commas`.
 
 `forklide -r 1,3,5`
-
-
-# After Deleting `2` which was dtale , sorry i forgot to show it first .. 
-
-![out](https://github.com/user-attachments/assets/bafbd509-86ec-41a6-88a6-c5b5736c9d23)
 
 
 
