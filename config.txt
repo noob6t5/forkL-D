@@ -1,0 +1,4 @@
+# Enter your GitHub token and username below (one per line):
+# Line 1: GitHub token
+# Line 2: GitHub username
+
